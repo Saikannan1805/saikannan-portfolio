@@ -64,8 +64,7 @@ Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 🌐 Live Demo
 
-🔗 **Live Site:** [https://your-portfolio.vercel.app](https://your-portfolio.vercel.app)  
-*(Replace the link above with your actual deployed URL once live.)*
+🔗 **Live Site:** [https://saikannan-portfolio.vercel.app/](https://saikannan-portfolio.vercel.app/)
 
 ---
 

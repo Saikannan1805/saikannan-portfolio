@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Saikannan Sathish Portfolio
 
-## Getting Started
+Personal portfolio built with **Next.js** and **Tailwind CSS** to showcase my projects, experience, and technical skills as a Computer Science graduate student.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🧑‍💻 About
+
+I’m **Saikannan Sathish**, a Computer Science graduate student at **Binghamton University (SUNY)** specializing in **Artificial Intelligence and Machine Learning**.  
+This portfolio highlights my academic journey, professional experience, and technical projects in AI, ML, and software development.
+
+---
+
+## 🚀 Features
+
+- Interactive **About Me** section  
+- Professional **Experience** timeline  
+- Showcases of **Projects** with tech tags  
+- **Skills** summary with categorized technologies  
+- **Contact** section with email, GitHub, and LinkedIn links  
+- Responsive design optimized for all devices  
+
+---
+
+## 🛠️ Tech Stack
+
+- **Next.js 14** — React framework for production  
+- **TypeScript** — Strongly typed language for maintainability  
+- **Tailwind CSS** — Utility-first styling for responsive UI  
+- **Lucide-React Icons** — Clean icon set for modern look  
+- **ShadCN/UI Components** — Accessible, minimal components  
+- **Framer Motion** — Smooth animations and transitions  
+
+---
+
+## 📁 Folder Structure
+
+```
+src/
+ ┣ components/        # Reusable UI elements
+ ┣ sections/          # Main page sections (About, Projects, etc.)
+ ┣ pages/             # App routing
+ ┣ public/            # Images and static assets
+ ┗ styles/            # Global and Tailwind styles
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧩 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To run locally:
 
-## Learn More
+```bash
+# Install dependencies
+npm install
 
-To learn more about Next.js, take a look at the following resources:
+# Start the development server
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🌐 Live Demo
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🔗 **Live Site:** [https://your-portfolio.vercel.app](https://your-portfolio.vercel.app)  
+*(Replace the link above with your actual deployed URL once live.)*
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📫 Contact
+
+- 📧 **Email:** ssathish2@binghamton.edu  
+- 💼 **LinkedIn:** [https://www.linkedin.com/in/saikannansathish/](https://www.linkedin.com/in/saikannansathish/)  
+- 💻 **GitHub:** [https://github.com/Saikannan1805](https://github.com/Saikannan1805)
+
+---
+
+## ⚖️ License
+
+This project is open for personal reference and learning.  
+Please do not copy or redistribute without permission.
+
+---
+
+✨ *Designed and developed by Saikannan Sathish*

@@ -9,13 +9,14 @@ interface ProjectCardProps {
   project: Project;
 }
 
+// Displays a single project card with title, summary, tech stack, and optional links
 export function ProjectCard({ project }: ProjectCardProps) {
   const hasGitHub = Boolean(project.github);
   const hasDemo = Boolean(project.demo);
 
   return (
     <Card className="h-full glass-panel-dark rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
-      {/* HEADER */}
+      {/* --- Header: Title & Summary --- */}
       <CardHeader className="pb-3">
         <div className="animate-fade-in" style={delay(15)}>
           <CardTitle className="text-lg font-semibold text-white mb-2">
@@ -29,9 +30,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </CardHeader>
 
-      {/* CONTENT */}
+      {/* --- Content: Tags + Links --- */}
       <CardContent className="space-y-3 pt-0">
-        {/* TAGS */}
+        {/* Tech stack / tags */}
         <div className="animate-fade-in" style={delay(17)}>
           <div className="flex flex-wrap gap-1.5">
             {project.tags.map((tag, index) => (
@@ -46,10 +47,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </div>
 
-        {/* BUTTONS */}
+        {/* GitHub and Demo buttons */}
         <div className="animate-fade-in" style={delay(18)}>
           <div className="flex gap-2">
-            {/* GitHub */}
+            {/* GitHub link (disabled if missing) */}
             {hasGitHub ? (
               <Button variant="glass" size="sm" asChild>
                 <a
@@ -70,7 +71,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               </Button>
             )}
 
-            {/* Demo */}
+            {/* Demo link (disabled if missing) */}
             {hasDemo ? (
               <Button variant="glass" size="sm" asChild>
                 <a

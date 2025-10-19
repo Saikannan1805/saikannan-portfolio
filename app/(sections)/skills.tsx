@@ -3,21 +3,14 @@ import { Glass } from "@/components/glass";
 import { Badge } from "@/components/ui/badge";
 import { delay } from "@/lib/constants";
 
-// --- AI & Data Science Stack ---
+// Grouping related skill categories for clarity and scalability
 const AI_STACK = [
-  // Language
   "Python",
-
-  // Core ML Frameworks
   "Scikit-learn",
   "TensorFlow",
   "PyTorch",
-
-  // Data Handling
   "Pandas",
   "NumPy",
-
-  // Model Domains
   "NLP",
   "Recommender Systems",
   "Computer Vision",
@@ -25,31 +18,20 @@ const AI_STACK = [
   "Machine Learning",
 ];
 
-// --- Software & Deployment Stack ---
 const SOFTWARE_DEPLOY = [
-  // Development & Frontend
   "JavaScript",
   "React.js",
   "Next.js",
   "Firebase",
-
-  // Backend & API
   "FastAPI",
   "SQL",
-
-  // Cloud & Deployment
   "Supabase",
   "Google Cloud Run",
   "Docker",
-
-  // Version Control
   "Git",
-
-  // Lifecycle
   "MLOps",
 ];
 
-// --- Supporting Tools & Concepts ---
 const SUPPORTING = [
   "Matplotlib",
   "Seaborn",
@@ -59,11 +41,13 @@ const SUPPORTING = [
   "AWS Academy Graduate",
 ];
 
+// Rendering the Skills section with grouped stacks
 export function Skills() {
   return (
+    // Setting up container anchor for in-page navigation
     <Container id="skills">
       <div className="space-y-6">
-        {/* --- Header --- */}
+        {/* Section header with short subtext */}
         <Glass className="p-4 text-center" variant="panel">
           <div className="animate-fade-in" style={delay(19)}>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">
@@ -77,9 +61,9 @@ export function Skills() {
           </div>
         </Glass>
 
-        {/* --- Two balanced columns --- */}
+        {/* Two-column layout: AIML stack and software stack */}
         <div className="grid gap-4 md:grid-cols-2">
-          {/* Left: AI & Data Science */}
+          {/* Left column — AIML stack */}
           <Glass className="p-4 md:p-5" variant="panel">
             <div className="animate-fade-in" style={delay(21)}>
               <h3 className="text-lg font-semibold text-white mb-3 text-center">
@@ -87,6 +71,7 @@ export function Skills() {
               </h3>
             </div>
             <div className="animate-fade-in" style={delay(22)}>
+              {/* Displaying badges for each AIML skill */}
               <div className="flex flex-wrap justify-center gap-1.5 md:gap-2">
                 {AI_STACK.map((skill) => (
                   <Badge
@@ -101,7 +86,7 @@ export function Skills() {
             </div>
           </Glass>
 
-          {/* Right: Software & Deployment */}
+          {/* Right column — Software and deployment stack */}
           <Glass className="p-4 md:p-5" variant="panel">
             <div className="animate-fade-in" style={delay(23)}>
               <h3 className="text-lg font-semibold text-white mb-3 text-center">
@@ -109,6 +94,7 @@ export function Skills() {
               </h3>
             </div>
             <div className="animate-fade-in" style={delay(24)}>
+              {/* Rendering each software/deployment skill as a badge */}
               <div className="flex flex-wrap justify-center gap-1.5 md:gap-2">
                 {SOFTWARE_DEPLOY.map((skill) => (
                   <Badge
@@ -124,7 +110,7 @@ export function Skills() {
           </Glass>
         </div>
 
-        {/* --- Full-width Supporting section --- */}
+        {/* Full-width supporting tools section */}
         <Glass className="p-4 md:p-5" variant="panel">
           <div className="animate-fade-in" style={delay(25)}>
             <h3 className="text-lg font-semibold text-white mb-3 text-center">
@@ -132,6 +118,7 @@ export function Skills() {
             </h3>
           </div>
           <div className="animate-fade-in" style={delay(26)}>
+            {/* Rendering smaller badges for secondary tools */}
             <div className="flex flex-wrap justify-center gap-1.5 md:gap-2">
               {SUPPORTING.map((skill) => (
                 <Badge

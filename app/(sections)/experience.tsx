@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { delay } from "@/lib/constants";
 
+// Defining a compact type for each experience card
 type Exp = {
   company: string;
   role: string;
@@ -13,6 +14,7 @@ type Exp = {
   logo?: string;
 };
 
+// Listing experience entries that drive the grid below
 const experiences: Exp[] = [
   {
     company: "Uplifty AI • Intern",
@@ -63,11 +65,12 @@ const experiences: Exp[] = [
   },
 ];
 
+// Rendering the Experience section with a glass header and a responsive grid
 export function Experience() {
   return (
     <Container id="experience">
       <div className="space-y-6">
-        {/* Section header */}
+        {/* Showing section title inside a compact glass panel */}
         <Glass className="p-4 text-center" variant="panel">
           <div className="animate-fade-in" style={delay(9)}>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">
@@ -81,17 +84,18 @@ export function Experience() {
           </div>
         </Glass>
 
-        {/* Experience grid */}
+        {/* Laying out experience cards in 2 columns on md+ */}
         <div className="grid gap-4 md:grid-cols-2">
           {experiences.map((exp, index) => (
+            // Applying translucent card style consistent with the theme
             <Card
               key={index}
               className="glass-panel-dark rounded-xl border border-white/10"
             >
-              {/* Header: text on left, logo on right (same height alignment) */}
+              {/* Aligning role/company text with a right-side logo block */}
               <CardHeader className="pb-3">
                 <div className="flex items-stretch gap-3">
-                  {/* Left side content */}
+                  {/* Wrapping left text side with min-w-0 to handle overflow gracefully */}
                   <div className="min-w-0 flex-1">
                     <div className="animate-fade-in" style={delay(11)}>
                       <CardTitle className="text-lg text-white mb-1">
@@ -100,6 +104,7 @@ export function Experience() {
                       <p className="text-slate-300 font-medium text-sm">
                         {exp.company}
                       </p>
+                      {/* Showing duration as a subtle badge rather than body text */}
                       <Badge
                         variant="secondary"
                         className="mt-1 bg-slate-700/50 text-slate-200 text-xs inline-block"
@@ -109,11 +114,12 @@ export function Experience() {
                     </div>
                   </div>
 
-                  {/* Right side logo — matches height of left block */}
+                  {/* Rendering company logo only when provided; preserving square aspect */}
                   {exp.logo && (
                     <div className="shrink-0 self-stretch flex items-center">
                       <div className="h-full aspect-square rounded-md overflow-hidden max-h-14 md:max-h-16 flex items-center justify-center">
                         <div className="animate-fade-in" style={delay(11)}>
+                          {/* Using next/image to keep logos crisp without layout shift */}
                           <Image
                             src={exp.logo}
                             alt={`${exp.company} logo`}
@@ -129,7 +135,7 @@ export function Experience() {
                 </div>
               </CardHeader>
 
-              {/* Description */}
+              {/* Preserving line breaks in description with whitespace-pre-line */}
               <CardContent className="pt-0">
                 <div className="animate-fade-in" style={delay(12)}>
                   <p className="text-slate-400 leading-relaxed text-sm whitespace-pre-line">

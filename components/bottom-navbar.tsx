@@ -6,6 +6,7 @@ import { User, Briefcase, FolderOpen, Code, Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { delay } from '@/lib/constants';
 
+// Defining all navigation items and their corresponding icons
 const navItems = [
   { id: 'about', label: 'About', icon: User },
   { id: 'experience', label: 'Experience', icon: Briefcase },
@@ -17,6 +18,7 @@ const navItems = [
 export function BottomNavbar() {
   const [activeSection, setActiveSection] = useState<string>('about');
 
+  // Tracking visible section using IntersectionObserver for dynamic highlighting
   useEffect(() => {
     const els = navItems
       .map(({ id }) => document.getElementById(id))
@@ -37,20 +39,24 @@ export function BottomNavbar() {
     return () => io.disconnect();
   }, []);
 
+  // Smooth scrolling to the selected section
   const scrollToSection = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
   return (
+    // Fixed glass-style bottom navigation bar
     <nav className="fixed bottom-3 left-1/2 -translate-x-1/2 z-50 w-[min(92vw,560px)]">
       <div className="animate-fade-in" style={delay(9)}>
-        {/* compact translucent glass container */}
-        <div className="
-          relative rounded-2xl border border-white/14
-          bg-[rgba(12,18,28,0.80)] supports-[backdrop-filter]:backdrop-blur-xl
-          shadow-[0_10px_30px_rgba(0,0,0,.35)]
-          px-1.5 py-1
-        ">
-          {/* use grid so the bar never stretches item spacing; each item takes equal space */}
+        {/* Translucent, blurred background container */}
+        <div
+          className="
+            relative rounded-2xl border border-white/14
+            bg-[rgba(12,18,28,0.80)] supports-[backdrop-filter]:backdrop-blur-xl
+            shadow-[0_10px_30px_rgba(0,0,0,.35)]
+            px-1.5 py-1
+          "
+        >
+          {/* Using grid layout for equal spacing between items */}
           <div className="grid grid-cols-5 gap-1">
             {navItems.map(({ id, label, icon: Icon }) => (
               <Button
@@ -66,6 +72,7 @@ export function BottomNavbar() {
                 )}
                 aria-current={activeSection === id ? 'page' : undefined}
               >
+                {/* Icon and label for each navigation button */}
                 <Icon size={16} />
                 <span className="hidden sm:block">{label}</span>
               </Button>

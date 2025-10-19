@@ -7,7 +7,9 @@ interface GlassProps {
   variant?: 'default' | 'panel';
 }
 
+// Reusable glass container for applying liquid-glass or panel effects
 export function Glass({ children, className, variant = 'default' }: GlassProps) {
+  // Choosing glass style based on variant
   const glassClasses = variant === 'panel' ? 'glass-panel-dark' : 'liquid-glass-dark';
 
   return (

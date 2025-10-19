@@ -2,9 +2,9 @@ import * as React from "react"
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
 import { cva } from "class-variance-authority"
 import { ChevronDownIcon } from "lucide-react"
-
 import { cn } from "@/lib/utils"
 
+// Root wrapper for the navigation menu — controls layout and optional viewport rendering
 function NavigationMenu({
   className,
   children,
@@ -24,11 +24,13 @@ function NavigationMenu({
       {...props}
     >
       {children}
+      {/* Optional viewport (dropdown container) for menu content */}
       {viewport && <NavigationMenuViewport />}
     </NavigationMenuPrimitive.Root>
   )
 }
 
+// List container — holds menu items horizontally
 function NavigationMenuList({
   className,
   ...props
@@ -45,6 +47,7 @@ function NavigationMenuList({
   )
 }
 
+// Individual menu item wrapper
 function NavigationMenuItem({
   className,
   ...props
@@ -58,10 +61,12 @@ function NavigationMenuItem({
   )
 }
 
+// Trigger button styling — consistent across menu items
 const navigationMenuTriggerStyle = cva(
   "group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground disabled:pointer-events-none disabled:opacity-50 data-[state=open]:hover:bg-accent data-[state=open]:text-accent-foreground data-[state=open]:focus:bg-accent data-[state=open]:bg-accent/50 focus-visible:ring-ring/50 outline-none transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1"
 )
 
+// Trigger — displays label and chevron, toggles menu content visibility
 function NavigationMenuTrigger({
   className,
   children,
@@ -73,7 +78,8 @@ function NavigationMenuTrigger({
       className={cn(navigationMenuTriggerStyle(), "group", className)}
       {...props}
     >
-      {children}{" "}
+      {children}
+      {/* Chevron rotates on open state */}
       <ChevronDownIcon
         className="relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180"
         aria-hidden="true"
@@ -82,6 +88,7 @@ function NavigationMenuTrigger({
   )
 }
 
+// Dropdown panel content — handles open/close animation and positioning
 function NavigationMenuContent({
   className,
   ...props
@@ -99,15 +106,14 @@ function NavigationMenuContent({
   )
 }
 
+// Viewport — manages layout for dropdown content (shared animations + size)
 function NavigationMenuViewport({
   className,
   ...props
 }: React.ComponentProps<typeof NavigationMenuPrimitive.Viewport>) {
   return (
     <div
-      className={cn(
-        "absolute top-full left-0 isolate z-50 flex justify-center"
-      )}
+      className={cn("absolute top-full left-0 isolate z-50 flex justify-center")}
     >
       <NavigationMenuPrimitive.Viewport
         data-slot="navigation-menu-viewport"
@@ -121,6 +127,7 @@ function NavigationMenuViewport({
   )
 }
 
+// Link — accessible interactive item for navigation or action
 function NavigationMenuLink({
   className,
   ...props
@@ -137,6 +144,7 @@ function NavigationMenuLink({
   )
 }
 
+// Indicator — small visual pointer under the active trigger
 function NavigationMenuIndicator({
   className,
   ...props
@@ -150,6 +158,7 @@ function NavigationMenuIndicator({
       )}
       {...props}
     >
+      {/* Small arrow shape */}
       <div className="bg-border relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm shadow-md" />
     </NavigationMenuPrimitive.Indicator>
   )

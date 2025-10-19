@@ -1,7 +1,8 @@
+/* Loading Tailwind and animation utilities */
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* ---------- THEME CONFIG ---------- */
+/* Defining dark selector and mapping CSS vars to Tailwind tokens */
 @custom-variant dark (&:is(.dark *));
 @theme inline {
   --color-background: var(--background);
@@ -16,7 +17,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* ---------- LIGHT MODE ---------- */
+/* Light theme surface + accents */
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -25,7 +26,7 @@
   --ring: oklch(0.704 0.04 256.788);
 }
 
-/* ---------- DARK MODE ---------- */
+/* Dark theme surface + accents */
 .dark {
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
@@ -33,17 +34,20 @@
   --ring: oklch(0.551 0.027 264.364);
 }
 
-/* ---------- BASE STYLES ---------- */
+/* Base layer: global tokens and page behaviors */
 @layer base {
+  /* Unifying border/ring colors across components */
   * {
     @apply border-border outline-ring/50;
   }
 
+  /* Enabling smooth scroll and reserving space for bottom nav */
   html {
     scroll-behavior: smooth;
     scroll-padding-bottom: 80px;
   }
 
+  /* Preventing horizontal scroll on wide effects */
   body {
     @apply text-foreground;
     min-height: 100vh;
@@ -51,28 +55,22 @@
     overflow-x: hidden;
   }
 
-  /* Fade-in animation */
+  /* Defining a simple fade-up sequence for on-view reveals */
   @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
   .animate-fade-in {
     animation: fade-in 0.6s ease-out forwards;
   }
 }
 
-/* ---------- PARALLAX BACKGROUND ---------- */
+/* Fixed, GPU-friendly parallax background */
 .parallax-bg {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-size: cover;      /* always fills viewport */
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center 100%;
   will-change: background-position;
@@ -81,9 +79,7 @@
   transform: translateZ(0);
 }
 
-
-
-/* ---------- LIQUID GLASS THEME ---------- */
+/* Liquid-glass surface (dark): subtle depth + highlight line */
 .liquid-glass-dark {
   backdrop-filter: blur(8px) saturate(150%);
   background: linear-gradient(
@@ -107,15 +103,10 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.4),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
 }
 
-/* ---------- GLASS PANELS ---------- */
+/* Glass panel variant for cards/sections */
 .glass-panel-dark {
   backdrop-filter: blur(6px) saturate(140%);
   background: linear-gradient(
@@ -132,7 +123,7 @@
     inset 0 -1px 0 rgba(255, 255, 255, 0.05);
 }
 
-/* ---------- AVATAR STYLING ---------- */
+/* Avatar: sizing via CSS var with safe cropping */
 @layer components {
   .avatar {
     --avatar-size: 320px;
@@ -153,7 +144,7 @@
   }
 }
 
-/* ---------- TEXT GLOW ANIMATION ---------- */
+/* Soft white glow that breathes over time */
 @keyframes glow-pulse {
   0% {
     text-shadow:

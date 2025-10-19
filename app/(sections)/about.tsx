@@ -3,16 +3,18 @@ import { Container } from "@/components/container";
 import { Glass } from "@/components/glass";
 import { delay } from "@/lib/constants";
 
+// Exporting the About section as a named component
 export function About() {
   return (
+    // Constraining max width and anchoring for in-page nav
     <Container id="about" className="max-w-7xl mx-auto">
-      {/* === HERO ROW: Circular Profile + Name/Bio === */}
       <div className="flex flex-col md:flex-row items-center md:items-stretch gap-8 mb-10">
-        {/* Circular Profile Photo with glow */}
+        {/* Staggering avatar entrance */}
         <div className="animate-fade-in" style={delay(1)}>
           <div className="flex justify-center md:justify-end md:flex-[0.35] lg:flex-[0.3] items-center">
-            {/* Responsive avatar wrapper */}
+            {/* Sizing avatar responsively with fixed aspect ratio */}
             <div className="relative shrink-0 w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40">
+              {/* Using next/image fill + sizes to serve correct resolutions */}
               <Image
                 src="/me2.jpg"
                 alt="Saikannan Sathish portrait"
@@ -22,16 +24,19 @@ export function About() {
              (max-width: 1024px) 128px,
              160px"
                 priority
+                // Applying circular crop and soft outer glow for contrast
                 className="rounded-full object-cover shadow-[0_0_20px_rgba(255,255,255,0.12)]"
               />
             </div>
           </div>
         </div>
 
-        {/* Name + Designation (soft glow pulse on load) */}
+        {/* Staggering text block entrance and centering vertically */}
         <div className="flex-1 flex items-center w-full">
           <div className="p-6 md:p-10 w-full h-full flex flex-col justify-center">
+            {/* Applying subtle glow pulse on name */}
             <div className="animate-fade-in" style={delay(2)}>
+              {/* Using text-shadow mix: light outer glow + dark drop for readability */}
               <h1
                 className="glow-pulse text-5xl md:text-6xl font-extrabold text-white tracking-tight
                  [text-shadow:_0_0_10px_rgba(255,255,255,0.4),_0_2px_6px_rgba(0,0,0,0.6)]"
@@ -39,6 +44,8 @@ export function About() {
                 Saikannan Sathish
               </h1>
             </div>
+
+            {/* Separating title for better line height and rhythm */}
             <div className="animate-fade-in" style={delay(3)}>
               <p
                 className="text-xl md:text-2xl text-slate-100 mt-3 font-semibold
@@ -47,6 +54,8 @@ export function About() {
                 AI/ML Engineer • Software Developer
               </p>
             </div>
+
+            {/* Showing concise education line with lighter emphasis */}
             <div className="animate-fade-in" style={delay(4)}>
               <p
                 className="text-lg md:text-xl text-slate-300 mt-1 font-normal
@@ -59,17 +68,20 @@ export function About() {
         </div>
       </div>
 
-      {/* === CONTENT ROW: Technical (L ~70%) + Personal (R ~30%) === */}
+      {/* Structuring content row: left (tech) wider than right (personal) */}
       <div className="grid gap-6 md:grid-cols-12 items-start">
-        {/* TECHNICAL CARD */}
+        {/* Rendering technical bio card with glass panel */}
         <div className="md:col-span-7 lg:col-span-8">
           <Glass className="p-6 md:p-8 text-left" variant="panel">
             <div className="space-y-4">
+              {/* Delaying heading to follow avatar/text rhythm */}
               <div className="animate-fade-in" style={delay(5)}>
                 <h2 className="text-2xl md:text-3xl font-semibold text-white">
                   About Me
                 </h2>
               </div>
+
+              {/* Using softer copy with emphasized key terms */}
               <div className="animate-fade-in" style={delay(6)}>
                 <p className="text-base md:text-lg leading-relaxed text-slate-400">
                   I’m a Computer Science graduate student driven by curiosity
@@ -93,7 +105,9 @@ export function About() {
                   that drives innovation.
                 </p>
 
-                {/* <div className="flex flex-wrap gap-2 pt-1">
+                {/* Keeping optional tag list ready for future surfacing */}
+                {/*
+                <div className="flex flex-wrap gap-2 pt-1">
                   {[
                     "Machine Learning",
                     "NLP",
@@ -109,21 +123,25 @@ export function About() {
                       {tag}
                     </span>
                   ))}
-                </div> */}
+                </div>
+                */}
               </div>
             </div>
           </Glass>
         </div>
 
-        {/* PERSONAL CARD */}
+        {/* Rendering personal highlights card with balanced contrast */}
         <div className="md:col-span-5 lg:col-span-4">
           <Glass className="p-6 md:p-8 text-left" variant="panel">
             <div className="space-y-3">
+              {/* Matching hierarchy level to keep right panel lighter */}
               <div className="animate-fade-in" style={delay(7)}>
                 <h3 className="text-xl font-semibold text-white">
                   Beyond my Resume
                 </h3>
               </div>
+
+              {/* Mixing short lines with spans to keep emphasis subtle */}
               <div className="animate-fade-in" style={delay(8)}>
                 <p className="text-slate-400">
                   A{" "}

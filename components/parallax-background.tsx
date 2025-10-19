@@ -10,6 +10,7 @@ type Props = {
   className?: string;
 };
 
+// Background component that creates a smooth parallax scroll effect
 export function ParallaxBackground({
   src,
   startPercent = 100,
@@ -19,39 +20,40 @@ export function ParallaxBackground({
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // ✅ SSR + ref guard
+    // Prevents execution on server and ensures element exists
     const el = ref.current;
     if (typeof window === 'undefined' || !el) return;
 
     const media = window.matchMedia('(prefers-reduced-motion: reduce)');
     const prefersReduced = media.matches;
 
-    // keep helpers inside effect to avoid deps warnings
+    // Utility to keep scroll values within valid range
     const clamp = (v: number, min: number, max: number) =>
       v < min ? min : v > max ? max : v;
 
+    // Updates background position based on scroll progress
     const update = () => {
       const doc = document.documentElement;
-      const maxScroll = Math.max(1, doc.scrollHeight - window.innerHeight); // avoid /0
-      const progress = clamp(window.scrollY / maxScroll, 0, 1); // 0 → 1
+      const maxScroll = Math.max(1, doc.scrollHeight - window.innerHeight);
+      const progress = clamp(window.scrollY / maxScroll, 0, 1);
       const pos = startPercent + (endPercent - startPercent) * progress;
       el.style.backgroundPosition = `center ${pos}%`;
     };
 
-    // Initial paint
+    // Initial background position
     update();
 
-    // If reduced motion, don't animate—just set start position
+    // Skip animation entirely if user prefers reduced motion
     if (prefersReduced) return;
 
-    // Use rAF for smooth updates; passive listener for scroll
+    // Use requestAnimationFrame for smooth updates
     const onScroll = () => requestAnimationFrame(update);
     const onResize = () => requestAnimationFrame(update);
 
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onResize);
 
-    // If user toggles reduced motion while page is open
+    // Recalculate if user toggles reduced motion preference
     const onMediaChange = () => update();
     media.addEventListener?.('change', onMediaChange);
 

@@ -1,35 +1,36 @@
-# Saikannan Sathish Portfolio
+# Saikannan Sathish — Portfolio
 
-Personal portfolio built with **Next.js** and **Tailwind CSS** to showcase my projects, experience, and technical skills as a Computer Science graduate student.
+Personal portfolio built using **Next.js**, **TypeScript**, and **Tailwind CSS** to showcase my projects, experience, and technical expertise as a Computer Science graduate student.
 
 ---
 
-## 🧑‍💻 About
+## 👨‍💻 About Me
 
 I’m **Saikannan Sathish**, a Computer Science graduate student at **Binghamton University (SUNY)** specializing in **Artificial Intelligence and Machine Learning**.  
-This portfolio highlights my academic journey, professional experience, and technical projects in AI, ML, and software development.
+This portfolio highlights my academic journey, professional experience, and projects in **AI**, **ML**, and **software development**, blending creativity with technical precision.
 
 ---
 
 ## 🚀 Features
 
-- Interactive **About Me** section  
+- Dynamic **About Me** section with smooth animations  
 - Professional **Experience** timeline  
-- Showcases of **Projects** with tech tags  
-- **Skills** summary with categorized technologies  
+- Showcases of **AI/ML Projects** with detailed tech tags  
+- Categorized **Skills** display  
 - **Contact** section with email, GitHub, and LinkedIn links  
-- Responsive design optimized for all devices  
+- Fully responsive, mobile-friendly design  
+- **Dark theme** with liquid-glass aesthetic  
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Next.js 14** — React framework for production  
-- **TypeScript** — Strongly typed language for maintainability  
-- **Tailwind CSS** — Utility-first styling for responsive UI  
-- **Lucide-React Icons** — Clean icon set for modern look  
-- **ShadCN/UI Components** — Accessible, minimal components  
-- **Framer Motion** — Smooth animations and transitions  
+- **Next.js 14** — React framework for modern, scalable web apps  
+- **TypeScript** — Type-safe and maintainable development  
+- **Tailwind CSS** — Utility-first CSS for fast UI building  
+- **shadcn/ui** — Clean, accessible component system  
+- **Lucide React** — Lightweight and elegant icon set  
+- **Framer Motion** — Subtle animations for smooth user experience  
 
 ---
 
@@ -37,28 +38,31 @@ This portfolio highlights my academic journey, professional experience, and tech
 
 ```
 src/
- ┣ components/        # Reusable UI elements
- ┣ sections/          # Main page sections (About, Projects, etc.)
- ┣ pages/             # App routing
- ┣ public/            # Images and static assets
- ┗ styles/            # Global and Tailwind styles
+┣ components/ # Shared and reusable UI components
+┣ app/(sections)/ # Core sections (About, Experience, Projects, etc.)
+┣ lib/ # Helpers, constants, and data files
+┣ public/ # Static assets and images
+┗ styles/ # Global CSS and Tailwind configurations
 ```
 
 ---
 
-## 🧩 Getting Started
+## ⚙️ Getting Started
 
-To run locally:
+Follow these steps to run the project locally:
 
 ```bash
-# Install dependencies
+# 1. Clone the repository
+
+# 2. Install dependencies
 npm install
 
-# Start the development server
+# 3. Run the development server
 npm run dev
 ```
 
-Then open [http://localhost:3000](http://localhost:3000) in your browser.
+Then open [http://localhost:3000](http://localhost:3000) or [http://localhost:3001](http://localhost:3001) in your browser.
+
 
 ---
 
@@ -70,9 +74,9 @@ Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 📫 Contact
 
-- 📧 **Email:** ssathish2@binghamton.edu  
-- 💼 **LinkedIn:** [https://www.linkedin.com/in/saikannansathish/](https://www.linkedin.com/in/saikannansathish/)  
-- 💻 **GitHub:** [https://github.com/Saikannan1805](https://github.com/Saikannan1805)
+- **Email:** ssathish2@binghamton.edu  
+- **LinkedIn:** [https://www.linkedin.com/in/saikannansathish/](https://www.linkedin.com/in/saikannansathish/)  
+<!-- - **GitHub:** [https://github.com/Saikannan1805](https://github.com/Saikannan1805) -->
 
 ---
 

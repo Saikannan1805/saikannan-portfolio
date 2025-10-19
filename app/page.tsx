@@ -6,20 +6,22 @@ import { Contact } from './(sections)/contact';
 import { BottomNavbar } from '@/components/bottom-navbar';
 import { ParallaxBackground } from '@/components/parallax-background';
 
+// Rendering the home page that combines all sections in one scrollable view
 export default function Home() {
   return (
+    // Root wrapper ensures full-height layout with hidden overflow
     <div className="min-h-screen relative overflow-hidden">
-      {/* === Parallax Background Layer === */}
+      {/* Background layer with parallax scroll effect */}
       <ParallaxBackground src="/bg1.jpg" startPercent={100} endPercent={0} />
 
-      {/* === Main Content Sections === */}
+      {/* Core sections of the portfolio */}
       <About />
       <Experience />
       <Projects />
       <Skills />
       <Contact />
 
-      {/* === Bottom Navbar === */}
+      {/* Fixed bottom navigation bar for quick section access */}
       <BottomNavbar />
     </div>
   );

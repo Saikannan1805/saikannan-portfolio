@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Saikannan Sathish",
   description:
     "Computer Science graduate student at Binghamton University specializing in AI, Machine Learning, and software development for intelligent, data-driven systems.",
+  
 };
 
 export default function RootLayout({

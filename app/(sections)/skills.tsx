@@ -1,6 +1,7 @@
 import { Container } from "@/components/container";
 import { Glass } from "@/components/glass";
 import { Badge } from "@/components/ui/badge";
+import { delay } from "@/lib/constants";
 
 // --- AI & Data Science Stack ---
 const AI_STACK = [
@@ -64,68 +65,84 @@ export function Skills() {
       <div className="space-y-6">
         {/* --- Header --- */}
         <Glass className="p-4 text-center" variant="panel">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">
-            Skills
-          </h2>
-          <p className="text-sm text-slate-400">
-            Focused on AI, Data Science, and Software Development
-          </p>
+          <div className="animate-fade-in" style={delay(19)}>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">
+              Skills
+            </h2>
+          </div>
+          <div className="animate-fade-in" style={delay(20)}>
+            <p className="text-sm text-slate-400">
+              Focused on AI, Data Science, and Software Development
+            </p>
+          </div>
         </Glass>
 
         {/* --- Two balanced columns --- */}
         <div className="grid gap-4 md:grid-cols-2">
           {/* Left: AI & Data Science */}
           <Glass className="p-4 md:p-5" variant="panel">
-            <h3 className="text-lg font-semibold text-white mb-3 text-center">
-              AIML & Data Science Stack
-            </h3>
-            <div className="flex flex-wrap justify-center gap-1.5 md:gap-2">
-              {AI_STACK.map((skill) => (
-                <Badge
-                  key={skill}
-                  variant="secondary"
-                  className="bg-slate-700/50 text-slate-200 px-2.5 py-1 text-sm hover:bg-slate-600/60 hover:text-white transition-colors"
-                >
-                  {skill}
-                </Badge>
-              ))}
+            <div className="animate-fade-in" style={delay(21)}>
+              <h3 className="text-lg font-semibold text-white mb-3 text-center">
+                AIML & Data Science Stack
+              </h3>
+            </div>
+            <div className="animate-fade-in" style={delay(22)}>
+              <div className="flex flex-wrap justify-center gap-1.5 md:gap-2">
+                {AI_STACK.map((skill) => (
+                  <Badge
+                    key={skill}
+                    variant="secondary"
+                    className="bg-slate-700/50 text-slate-200 px-2.5 py-1 text-sm hover:bg-slate-600/60 hover:text-white transition-colors"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
             </div>
           </Glass>
 
           {/* Right: Software & Deployment */}
           <Glass className="p-4 md:p-5" variant="panel">
-            <h3 className="text-lg font-semibold text-white mb-3 text-center">
-              Software & Deployment
-            </h3>
-            <div className="flex flex-wrap justify-center gap-1.5 md:gap-2">
-              {SOFTWARE_DEPLOY.map((skill) => (
-                <Badge
-                  key={skill}
-                  variant="secondary"
-                  className="bg-slate-700/50 text-slate-200 px-2.5 py-1 text-sm hover:bg-slate-600/60 hover:text-white transition-colors"
-                >
-                  {skill}
-                </Badge>
-              ))}
+            <div className="animate-fade-in" style={delay(23)}>
+              <h3 className="text-lg font-semibold text-white mb-3 text-center">
+                Software & Deployment
+              </h3>
+            </div>
+            <div className="animate-fade-in" style={delay(24)}>
+              <div className="flex flex-wrap justify-center gap-1.5 md:gap-2">
+                {SOFTWARE_DEPLOY.map((skill) => (
+                  <Badge
+                    key={skill}
+                    variant="secondary"
+                    className="bg-slate-700/50 text-slate-200 px-2.5 py-1 text-sm hover:bg-slate-600/60 hover:text-white transition-colors"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
             </div>
           </Glass>
         </div>
 
         {/* --- Full-width Supporting section --- */}
         <Glass className="p-4 md:p-5" variant="panel">
-          <h3 className="text-lg font-semibold text-white mb-3 text-center">
-            Supporting Tools & Concepts
-          </h3>
-          <div className="flex flex-wrap justify-center gap-1.5 md:gap-2">
-            {SUPPORTING.map((skill) => (
-              <Badge
-                key={skill}
-                variant="secondary"
-                className="bg-slate-700/50 text-slate-200 px-2.5 py-1 text-sm hover:bg-slate-600/60 hover:text-white transition-colors"
-              >
-                {skill}
-              </Badge>
-            ))}
+          <div className="animate-fade-in" style={delay(25)}>
+            <h3 className="text-lg font-semibold text-white mb-3 text-center">
+              Supporting Tools & Concepts
+            </h3>
+          </div>
+          <div className="animate-fade-in" style={delay(26)}>
+            <div className="flex flex-wrap justify-center gap-1.5 md:gap-2">
+              {SUPPORTING.map((skill) => (
+                <Badge
+                  key={skill}
+                  variant="secondary"
+                  className="bg-slate-700/50 text-slate-200 px-2.5 py-1 text-sm hover:bg-slate-600/60 hover:text-white transition-colors"
+                >
+                  {skill}
+                </Badge>
+              ))}
+            </div>
           </div>
         </Glass>
       </div>

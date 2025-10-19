@@ -1,24 +1,38 @@
-import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
-import { cva, type VariantProps } from "class-variance-authority"
-
-import { cn } from "@/lib/utils"
+import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all " +
+    "disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none " +
+    "[&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 " +
+    "outline-none focus-visible:ring-ring/50 focus-visible:ring-[3px] " +
+    "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default:
+          "rounded-md bg-primary text-primary-foreground hover:bg-primary/90",
         destructive:
-          "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+          "rounded-md bg-destructive text-white hover:bg-destructive/90 " +
+          "focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+          "rounded-md border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground " +
+          "dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+          "rounded-md bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost:
-          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-        link: "text-primary underline-offset-4 hover:underline",
+          "rounded-md hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+        link: "rounded-none text-primary underline-offset-4 hover:underline",
+
+        // ✅ New consistent glass variant (semi-opaque so it doesn't get darker/lighter
+        // based on whatever image is behind it)
+        glass:
+  "rounded-xl border border-white/15 text-white " +
+  "bg-[rgba(20,30,50,0.55)] hover:bg-[rgba(20,30,50,0.65)] " + // ← lighter & brighter navy tone
+  "backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,.08)] " +
+  "focus-visible:ring-white/40 transition-all duration-200",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
@@ -34,27 +48,30 @@ const buttonVariants = cva(
       size: "default",
     },
   }
-)
+);
 
-function Button({
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+}
+
+export function Button({
   className,
   variant,
   size,
   asChild = false,
   ...props
-}: React.ComponentProps<"button"> &
-  VariantProps<typeof buttonVariants> & {
-    asChild?: boolean
-  }) {
-  const Comp = asChild ? Slot : "button"
+}: ButtonProps) {
+  const Comp = asChild ? Slot : "button";
 
   return (
     <Comp
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(buttonVariants({ variant, size }), className)} // ✅ apply className correctly
       {...props}
     />
-  )
+  );
 }
 
-export { Button, buttonVariants }
+export { buttonVariants };

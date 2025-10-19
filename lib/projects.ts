@@ -22,8 +22,8 @@ export const projects: Project[] = [
     "Pandas",
     "MLOps"
   ],
-  github: "",
-  demo: ""
+  github: "https://saikannan-portfolio.vercel.app/",
+  demo: "https://saikannan-portfolio.vercel.app/"
 }
 
 
@@ -43,8 +43,8 @@ export const projects: Project[] = [
     "NLTK",
     "Matplotlib"
   ],
-  github: "", // keep blank for now
-  demo: ""    // keep blank for now
+  github: "https://saikannan-portfolio.vercel.app/", // keep blank for now
+  demo: "https://saikannan-portfolio.vercel.app/"    // keep blank for now
 }
 ,
   {
@@ -60,8 +60,8 @@ export const projects: Project[] = [
     "Pandas",
     "NumPy"
   ],
-  github: "", // leave blank for now
-  demo: ""    // leave blank for now
+  github: "https://saikannan-portfolio.vercel.app/", // leave blank for now
+  demo: "https://saikannan-portfolio.vercel.app/"    // leave blank for now
 }
 ,
   {
@@ -77,8 +77,8 @@ export const projects: Project[] = [
     "LabelImg",
     "Object Detection"
   ],
-  github: "", // leave blank for now
-  demo: ""    // leave blank for now
+  github: "https://saikannan-portfolio.vercel.app/", // leave blank for now
+  demo: "https://saikannan-portfolio.vercel.app/"    // leave blank for now
 }
 ,
   {
@@ -95,8 +95,8 @@ export const projects: Project[] = [
     "NoSQL",
     "UI/UX"
   ],
-  github: "", // leave blank for now
-  demo: ""    // leave blank for now
+  github: "https://saikannan-portfolio.vercel.app/", // leave blank for now
+  demo: "https://saikannan-portfolio.vercel.app/"    // leave blank for now
 },
 {
   title: "Toxic Comment Classification – AI-Driven Online Safety",
@@ -112,8 +112,7 @@ export const projects: Project[] = [
     "Scikit-learn",
     "NLTK"
   ],
-  github: "", // leave blank for now
-  demo: ""    // leave blank for now
+  github: "https://saikannan-portfolio.vercel.app/", // leave blank for now
+  demo: "https://saikannan-portfolio.vercel.app/"    // leave blank for now
 }
-
 ];

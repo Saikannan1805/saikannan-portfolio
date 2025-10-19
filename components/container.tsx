@@ -12,7 +12,8 @@ export function Container({ children, className, id }: ContainerProps) {
     <section
       id={id}
       className={cn(
-        "min-h-screen flex items-center justify-center px-3 py-8 md:px-4 md:py-12",
+        // 👇 scroll-mt helps anchor & observer on small screens
+        "min-h-screen flex items-center justify-center px-3 py-8 md:px-4 md:py-12 scroll-mt-24 md:scroll-mt-28",
         className
       )}
     >

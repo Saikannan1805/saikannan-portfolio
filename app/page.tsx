@@ -4,16 +4,22 @@ import { Projects } from './(sections)/projects';
 import { Skills } from './(sections)/skills';
 import { Contact } from './(sections)/contact';
 import { BottomNavbar } from '@/components/bottom-navbar';
+import { ParallaxBackground } from '@/components/parallax-background';
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative overflow-hidden">
+      {/* === Parallax Background Layer === */}
+      <ParallaxBackground src="/bg1.jpg" startPercent={100} endPercent={0} />
+
+      {/* === Main Content Sections === */}
       <About />
       <Experience />
       <Projects />
       <Skills />
-      {/* Merged Contact + Resume lives here */}
       <Contact />
+
+      {/* === Bottom Navbar === */}
       <BottomNavbar />
     </div>
   );

@@ -14,7 +14,7 @@ export function About() {
             {/* Responsive avatar wrapper */}
             <div className="relative shrink-0 w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40">
               <Image
-                src="/me.jpg"
+                src="/me2.jpg"
                 alt="Saikannan Sathish portrait"
                 fill
                 sizes="(max-width: 480px) 80px,

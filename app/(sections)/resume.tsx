@@ -31,7 +31,7 @@ export function Resume() {
             >
               <a href="/SaikannanSathish_Resume.pdf" download>
                 <Download size={18} />
-                Download Resumeeeeee
+                Download Resume
               </a>
             </Button>
             

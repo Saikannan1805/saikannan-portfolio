@@ -10,6 +10,24 @@ export interface Project {
 // List of all showcased projects
 export const projects: Project[] = [
   {
+  title: "Hybrid Knowledge Assistant – RAG System",
+  summary:
+    "Built a Retrieval-Augmented Generation (RAG) system that answers user queries over custom documents using semantic search and large language models. Implemented document ingestion, chunking, embedding generation, and vector-based retrieval with pgvector, integrated via FastAPI for low-latency responses.",
+  tags: [
+    "RAG",
+    "LLMs",
+    "Vector Search",
+    "AI/ML",
+    "Python",
+    "FastAPI",
+    "pgvector",
+    "Supabase",
+    "Embeddings",
+  ],
+  github: "https://github.com/Saikannan1805/saikannan-portfolio.git",
+  demo: "https://saikannan-portfolio.vercel.app/",
+},
+{
     title: "Hybrid Cold-Start Recommender System",
     summary:
       "Developed a hybrid recommender combining content and collaborative signals, deployed via FastAPI and Supabase Edge Functions on Google Cloud Run for low-latency personalization.",
